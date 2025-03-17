@@ -7,7 +7,7 @@ console.log('Risk Dashboard loaded');
 const riskForm = document.getElementById('riskForm');
 if (riskForm) {
     riskForm.addEventListener('submit', function(event) {
-        event.stopPropagation();
+        event.stopPropagation(); 
         event.preventDefault();
         const riskName = document.getElementById('riskName').value;
         const riskLevel = document.getElementById('riskLevel').value;
@@ -47,7 +47,7 @@ if (riskDashboard) {
 // task 3 Removing Risk Items
 const resolveButton = riskCard.querySelector('.resolveButton');
 resolveButton.addEventListener('click', (event) => {
-    event.stopPropagation();
+    event.stopPropagation(); 
     riskDashboard.removeChild(riskCard); // removes risk card
 }); // event resolve button
 }; // function to add risk item
