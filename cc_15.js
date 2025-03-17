@@ -43,3 +43,11 @@ if (riskDashboard) {
 } else {
     console.error('Risk Dashboard element not found');
 }
+
+// task 3 Removing Risk Items
+const resolveButton = riskCard.querySelector('.resolveButton');
+resolveButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    riskDashboard.removeChild(riskCard); // removes risk card
+}); // event resolve button
+}; // function to add risk item
