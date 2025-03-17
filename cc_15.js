@@ -28,3 +28,18 @@ function addRiskItem(riskName, riskLevel, department) {
         <p>Department: ${department}</p>
         <button class="resolveButton">Resolve</button>
     `;// creates risk card w/variables
+
+   // task 4 Categorize Risks by Level
+   if (riskLevel === 'Low') {
+    riskCard.style.backgroundColor = 'green';
+} else if (riskLevel === 'Medium') {
+    riskCard.style.backgroundColor = 'yellow';
+} else if (riskLevel === 'High') {
+    riskCard.style.backgroundColor = 'red';
+}; // changes to color of card due to risk level
+
+if (riskDashboard) {
+    riskDashboard.appendChild(riskCard); // appending to risk dashboard
+} else {
+    console.error('Risk Dashboard element not found');
+}
