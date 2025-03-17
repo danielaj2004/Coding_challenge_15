@@ -51,3 +51,34 @@ resolveButton.addEventListener('click', (event) => {
     riskDashboard.removeChild(riskCard); // removes risk card
 }); // event resolve button
 }; // function to add risk item
+
+// task 5 Implementing Bulk Updates
+document.getElementById('increaseRiskLevels').addEventListener('click', () => {
+    const riskCards = document.querySelectorAll('.risk-card');
+
+    riskCards.forEach(card => {
+        const riskLevelElement = card.querySelector('.risk-level');
+        const riskLevel = riskLevelElement.textContent.split(': ')[1];  // Get current risk level
+
+        let newRiskLevel;
+        if (riskLevel === 'Low') {
+            newRiskLevel = 'Medium';
+            card.style.backgroundColor = 'yellow';
+        } else if (riskLevel === 'Medium') {
+            newRiskLevel = 'High';
+            card.style.backgroundColor = 'red';
+        } else {
+            newRiskLevel = 'High';
+        }
+        riskLevelElement.textContent = `Risk Level: ${newRiskLevel}`; // Update the risk level in the Dashboard
+    });
+});
+
+// Test cases
+addRiskItem("Data Breach", "High", "IT");
+addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+
+addRiskItem("Market Fluctuations", "High", "Finance");
+
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
